@@ -1,0 +1,53 @@
+{
+    "images": [
+        {
+            "id": 1,
+            "file_name": "frame_00098.png",
+            "width": 2560,
+            "height": 1440
+        }
+    ],
+    "annotations": [
+        {
+            "id": 1,
+            "image_id": 1,
+            "category_id": 1,
+            "keypoints": [],
+            "num_keypoints": 0,
+            "bbox": [
+                0.0,
+                0.0,
+                0.0,
+                0.0
+            ],
+            "area": 0.0,
+            "iscrowd": 0
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "person",
+            "supercategory": "person",
+            "keypoints": [
+                "nose",
+                "left_eye",
+                "right_eye",
+                "left_ear",
+                "right_ear",
+                "left_shoulder",
+                "right_shoulder",
+                "left_elbow",
+                "right_elbow",
+                "left_wrist",
+                "right_wrist",
+                "left_hip",
+                "right_hip",
+                "left_knee",
+                "right_knee",
+                "left_ankle",
+                "right_ankle"
+            ]
+        }
+    ]
+}

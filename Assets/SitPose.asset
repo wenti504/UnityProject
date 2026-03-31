@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0abb5821be86a4440b1f1096c9a2cd88, type: 3}
+  m_Name: SitPose
+  m_EditorClassIdentifier: 
+  bones:
+  - boneName: Hips
+    localPosition: {x: -4.712, y: 1.182, z: -0.475}
+    localRotation: {x: -0.13052624, y: 0, z: 0, w: 0.9914449}
+  - boneName: Spine
+    localPosition: {x: 0, y: 0.13199998, z: 0.000000029802322}
+    localRotation: {x: -0.17364822, y: -0, z: -0, w: 0.9848077}
+  - boneName: Chest
+    localPosition: {x: 0, y: 0.29999998, z: -0.000000052154064}
+    localRotation: {x: 0.08715573, y: -0, z: -0, w: 0.9961947}
+  - boneName: Neck
+    localPosition: {x: 0, y: 0.35000002, z: 0.000000026077032}
+    localRotation: {x: -0.000000029802322, y: -0, z: -0, w: 1}
+  - boneName: Head
+    localPosition: {x: 0, y: 0.15000004, z: -0.00000009611249}
+    localRotation: {x: -0.000000014901161, y: -0, z: -0, w: 1}
+  - boneName: nose
+    localPosition: {x: 0, y: 0.0796, z: 0.1086}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+  - boneName: leftear
+    localPosition: {x: -0.1025, y: 0.1422, z: 0.0399}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+  - boneName: rightear
+    localPosition: {x: 0.1025, y: 0.1422, z: 0.0399}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+  - boneName: lefteyes
+    localPosition: {x: -0.049, y: 0.146, z: 0.1}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+  - boneName: righteyes
+    localPosition: {x: 0.049, y: 0.146, z: 0.1}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+  - boneName: LeftUpperArm
+    localPosition: {x: -0.16599989, y: 0.3500001, z: 0.047999915}
+    localRotation: {x: -0, y: 0.000000018626451, z: 0.5735763, w: 0.81915224}
+  - boneName: LeftLowerArm
+    localPosition: {x: -0.3, y: 0.00000017881393, z: 0.00000011005455}
+    localRotation: {x: -0, y: -0, z: -0, w: 1}
+  - boneName: LeftHand
+    localPosition: {x: -0.28600007, y: 0.0069996417, z: 0.01499995}
+    localRotation: {x: -0, y: -0, z: -0, w: 1}
+  - boneName: leftwrist
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.000000079341056, y: 0.000000055555198, z: -0.5735764, w: 0.8191521}
+  - boneName: leftelbow
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.00000005492842, y: 0.00000003846129, z: -0.5735764, w: 0.8191521}
+  - boneName: leftshoulder
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.00000005492842, y: 0.00000003846129, z: -0.5735764, w: 0.8191521}
+  - boneName: RightUpperArm
+    localPosition: {x: 0.16599989, y: 0.35000005, z: 0.0047999546}
+    localRotation: {x: -0, y: -0.000000018626451, z: -0.5735763, w: 0.81915224}
+  - boneName: RightLowerArm
+    localPosition: {x: 0.30000022, y: 0.00000008940697, z: -0.0000000650341}
+    localRotation: {x: -0, y: -0, z: -0, w: 1}
+  - boneName: RightHand
+    localPosition: {x: 0.2859998, y: 0.006999731, z: 0.015000062}
+    localRotation: {x: -0, y: -0, z: -0, w: 1}
+  - boneName: rightwrist
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.00000012206316, y: -0.00000008546954, z: 0.5735764, w: 0.8191521}
+  - boneName: rightelbow
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.000000103753685, y: -0.0000000726491, z: 0.5735764, w: 0.8191521}
+  - boneName: rightshoulder
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.000000103753685, y: -0.0000000726491, z: 0.5735764, w: 0.8191521}
+  - boneName: LeftUpperLeg
+    localPosition: {x: -0.17999983, y: -0.07600003, z: -0.000000016763806}
+    localRotation: {x: 0.60876155, y: -0, z: 0, w: -0.7933533}
+  - boneName: LeftLowerLeg
+    localPosition: {x: 0, y: -0.50000024, z: 0}
+    localRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  - boneName: LeftFoot
+    localPosition: {x: 0, y: -0.37000024, z: -0.00000008940697}
+    localRotation: {x: -0, y: -0, z: -0, w: 1}
+  - boneName: leftankle
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.53729963, y: -2.9963284e-15, z: -1.9088718e-15, w: -0.8433915}
+  - boneName: leftknee
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.53729963, y: -2.9963284e-15, z: -1.9088718e-15, w: -0.8433915}
+  - boneName: lefthips
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.5372997, y: -2.9963284e-15, z: -1.908872e-15, w: -0.8433915}
+  - boneName: RightUpperLeg
+    localPosition: {x: 0.17999983, y: -0.07600003, z: -0.000000016763806}
+    localRotation: {x: 0.60876155, y: -0, z: 0, w: -0.7933533}
+  - boneName: RightLowerLeg
+    localPosition: {x: 0, y: -0.50000024, z: 0}
+    localRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  - boneName: RightFoot
+    localPosition: {x: 0, y: -0.37000024, z: -0.00000008940697}
+    localRotation: {x: -0, y: -0, z: -0, w: 1}
+  - boneName: rightankle
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: 0.9063078, y: 5.054155e-15, z: 3.2198526e-15, w: 0.42261833}
+  - boneName: rightknee
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.53729963, y: -2.9963284e-15, z: -1.9088718e-15, w: -0.8433915}
+  - boneName: righthips
+    localPosition: {x: 0, y: 0, z: 0}
+    localRotation: {x: -0.53729963, y: -2.9963284e-15, z: -1.9088718e-15, w: -0.8433915}
