@@ -37,6 +37,7 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimatorControllerTool
@@ -56,6 +57,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.RectMask2D
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
+    - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   serializedClasses:
     Assembly-CSharp:
@@ -96,6 +98,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.AnimationTriggers
     - UnityEngine.UI.Button/ButtonClickedEvent
     - UnityEngine.UI.ColorBlock
+    - UnityEngine.UI.FontData
     - UnityEngine.UI.MaskableGraphic/CullStateChangedEvent
     - UnityEngine.UI.Navigation
     - UnityEngine.UI.ScrollRect/ScrollRectEvent
@@ -132,13 +135,9 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
-    - Class: 74
-      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 89
-      Script: {instanceID: 0}
-    - Class: 91
       Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
@@ -195,6 +194,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5216}
     - Class: 114
+      Script: {instanceID: 5478}
+    - Class: 114
       Script: {instanceID: 5538}
     - Class: 114
       Script: {instanceID: 5784}
@@ -221,7 +222,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 7566}
     - Class: 114
-      Script: {instanceID: 23846}
+      Script: {instanceID: 23860}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -715,7 +716,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: ba742d11afd28b48172a6c07a99e704b
+      Hash: 12f14a317e5b1e2e815a45826ac34500
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: FallUIController
@@ -1015,7 +1016,7 @@ ScriptsOnlyBuild:
     className: AspectRatioFitter
   - hash:
       serializedVersion: 2
-      Hash: dd59746ab185b8b271fe1f708e072fe0
+      Hash: 589966fcaf16da79dc992ba03cc611fc
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: BatchFallGenerator
@@ -1382,4 +1383,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: "C:/Users/\u98DE\u661F/Desktop/\u65B0\u5EFA\u6587\u4EF6\u5939/\u8DCC\u5012\u52A8\u753B\u751F\u6210.exe"
+  playerPath: "C:/Users/\u98DE\u661F/Desktop/\u8DCC\u5012\u52A8\u753B\u751F\u6210/\u8DCC\u5012\u52A8\u753B\u751F\u6210.exe"

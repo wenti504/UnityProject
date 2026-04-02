@@ -3,64 +3,52 @@
   "WorkspaceRootPath": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|d:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\batchfallgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\batchfallgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_walkingbalanceloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_walkingbalanceloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_tripwalking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_tripwalking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\falluicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\falluicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_slip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_slip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_tripwalking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_tripwalking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_walkingbalanceloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_walkingbalanceloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_standbalanceloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_standbalanceloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_pushcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_pushcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\reachobjectanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\reachobjectanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_slip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_slip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_sitsupportloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_sitsupportloss.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\uivisibilitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\uivisibilitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\reachobjectanimation_right.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\reachobjectanimation_right.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\physicscollisionslowdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\physicscollisionslowdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\reachobjectanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\reachobjectanimation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|d:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\batchfallgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\batchfallgenerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fall_pushcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fall_pushcollision.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\bonepose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\bonepose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\reachobjectanimation_right.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\reachobjectanimation_right.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\fallrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\fallrunner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\poserecorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -91,34 +79,6 @@
       "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\skeletonvisualizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\jointstrengthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\jointstrengthcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\hipsresetonrun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\hipsresetonrun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\occor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\occor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\legweaknesstrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\legweaknesstrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\collisionforceonpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\collisionforceonpart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\bettersimpleslip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\bettersimpleslip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\ragdollstand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7E2C3E69-316A-4804-AC48-66BFC97D8455}|Assembly-CSharp.csproj|solutionrelative:assets\\ragdollstand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FreezeOnStateExit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FreezeOnStateExit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -127,12 +87,52 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\FloatInputBinder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\animationfreezereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\animationfreezereceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\AnimationFreezeReceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\AnimationFreezeReceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\assets\\musclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\musclecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\MuscleController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\MuscleController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\UIVisibilityController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\UIVisibilityController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\PhysicsCollisionSlowdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\PhysicsCollisionSlowdown.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\JointStrengthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\JointStrengthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\HipsResetOnRun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\HipsResetOnRun.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\LegWeaknessTrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\LegWeaknessTrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\CollisionForceOnPart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\CollisionForceOnPart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\BetterSimpleSlip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\BetterSimpleSlip.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\occor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\occor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\RagdollStand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\RagdollStand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -142,59 +142,127 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "ReachObjectAnimation_Right.cs",
+              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation_Right.cs",
+              "RelativeDocumentMoniker": "Assets\\ReachObjectAnimation_Right.cs",
+              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation_Right.cs",
+              "RelativeToolTip": "Assets\\ReachObjectAnimation_Right.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAUwGIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-10T12:50:27.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Fall_SitSupportLoss.cs",
+              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_SitSupportLoss.cs",
+              "RelativeDocumentMoniker": "Assets\\Fall_SitSupportLoss.cs",
+              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_SitSupportLoss.cs",
+              "RelativeToolTip": "Assets\\Fall_SitSupportLoss.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAA6wBYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:38:04.983Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Fall_Slip.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_Slip.cs",
               "RelativeDocumentMoniker": "Assets\\Fall_Slip.cs",
               "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_Slip.cs",
               "RelativeToolTip": "Assets\\Fall_Slip.cs",
-              "ViewState": "AgIAANsAAAAAAAAAAAA3wOwAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAsBAAAAAAAAAAAAwC0BAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T08:38:15.206Z"
+              "WhenOpened": "2026-03-12T08:38:15.206Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Fall_StandBalanceLoss.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_StandBalanceLoss.cs",
               "RelativeDocumentMoniker": "Assets\\Fall_StandBalanceLoss.cs",
               "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_StandBalanceLoss.cs",
               "RelativeToolTip": "Assets\\Fall_StandBalanceLoss.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAAANMAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAwKwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T08:38:24.591Z"
+              "WhenOpened": "2026-03-12T08:38:24.591Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Fall_WalkingBalanceLoss.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_WalkingBalanceLoss.cs",
               "RelativeDocumentMoniker": "Assets\\Fall_WalkingBalanceLoss.cs",
               "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_WalkingBalanceLoss.cs",
               "RelativeToolTip": "Assets\\Fall_WalkingBalanceLoss.cs",
-              "ViewState": "AgIAAOQAAAAAAAAAAAAAwAYBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAmwGEAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T08:38:50.206Z"
+              "WhenOpened": "2026-03-12T08:38:50.206Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Fall_TripWalking.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_TripWalking.cs",
               "RelativeDocumentMoniker": "Assets\\Fall_TripWalking.cs",
               "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_TripWalking.cs",
               "RelativeToolTip": "Assets\\Fall_TripWalking.cs",
-              "ViewState": "AgIAAO8AAAAAAAAAAAAAwBEBAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAAwBQBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T07:20:20.799Z"
+              "WhenOpened": "2026-03-11T07:20:20.799Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "FallUIController.cs",
+              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FallUIController.cs",
+              "RelativeDocumentMoniker": "Assets\\FallUIController.cs",
+              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FallUIController.cs",
+              "RelativeToolTip": "Assets\\FallUIController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAADwv0kAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-22T06:08:15.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ReachObjectAnimation.cs",
+              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation.cs",
+              "RelativeDocumentMoniker": "Assets\\ReachObjectAnimation.cs",
+              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation.cs",
+              "RelativeToolTip": "Assets\\ReachObjectAnimation.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAiwFoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-25T08:11:16.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Fall_PushCollision.cs",
+              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_PushCollision.cs",
+              "RelativeDocumentMoniker": "Assets\\Fall_PushCollision.cs",
+              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_PushCollision.cs",
+              "RelativeToolTip": "Assets\\Fall_PushCollision.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-12T08:37:55.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "BatchFallGenerator.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\BatchFallGenerator.cs",
               "RelativeDocumentMoniker": "Assets\\BatchFallGenerator.cs",
@@ -207,55 +275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FallUIController.cs",
-              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FallUIController.cs",
-              "RelativeDocumentMoniker": "Assets\\FallUIController.cs",
-              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FallUIController.cs",
-              "RelativeToolTip": "Assets\\FallUIController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAADwvyYAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-22T06:08:15.478Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Fall_PushCollision.cs",
-              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_PushCollision.cs",
-              "RelativeDocumentMoniker": "Assets\\Fall_PushCollision.cs",
-              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_PushCollision.cs",
-              "RelativeToolTip": "Assets\\Fall_PushCollision.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T08:37:55.319Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ReachObjectAnimation.cs",
-              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation.cs",
-              "RelativeDocumentMoniker": "Assets\\ReachObjectAnimation.cs",
-              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation.cs",
-              "RelativeToolTip": "Assets\\ReachObjectAnimation.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAUwF4AAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-25T08:11:16.266Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Fall_SitSupportLoss.cs",
-              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_SitSupportLoss.cs",
-              "RelativeDocumentMoniker": "Assets\\Fall_SitSupportLoss.cs",
-              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\Fall_SitSupportLoss.cs",
-              "RelativeToolTip": "Assets\\Fall_SitSupportLoss.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwL4AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T08:38:04.983Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 23,
               "Title": "UIVisibilityController.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\UIVisibilityController.cs",
               "RelativeDocumentMoniker": "Assets\\UIVisibilityController.cs",
@@ -267,7 +287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 24,
               "Title": "PhysicsCollisionSlowdown.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\PhysicsCollisionSlowdown.cs",
               "RelativeDocumentMoniker": "Assets\\PhysicsCollisionSlowdown.cs",
@@ -279,7 +299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "BonePose.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\BonePose.cs",
               "RelativeDocumentMoniker": "Assets\\BonePose.cs",
@@ -291,19 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ReachObjectAnimation_Right.cs",
-              "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation_Right.cs",
-              "RelativeDocumentMoniker": "Assets\\ReachObjectAnimation_Right.cs",
-              "ToolTip": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\ReachObjectAnimation_Right.cs",
-              "RelativeToolTip": "Assets\\ReachObjectAnimation_Right.cs",
-              "ViewState": "AgIAAM4AAAAAAAAAAAAAwPAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-10T12:50:27.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 21,
               "Title": "AnimationFreezeReceiver.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\AnimationFreezeReceiver.cs",
               "RelativeDocumentMoniker": "Assets\\AnimationFreezeReceiver.cs",
@@ -315,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 11,
               "Title": "FallRunner.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FallRunner.cs",
               "RelativeDocumentMoniker": "Assets\\FallRunner.cs",
@@ -327,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 25,
               "Title": "end.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\end.cs",
               "RelativeDocumentMoniker": "Assets\\end.cs",
@@ -339,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 12,
               "Title": "PoseRecorder.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\PoseRecorder.cs",
               "RelativeDocumentMoniker": "Assets\\PoseRecorder.cs",
@@ -351,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 13,
               "Title": "PoseAsset.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\PoseAsset.cs",
               "RelativeDocumentMoniker": "Assets\\PoseAsset.cs",
@@ -363,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 14,
               "Title": "SkeletonVisualizerRuntime.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\SkeletonVisualizerRuntime.cs",
               "RelativeDocumentMoniker": "Assets\\SkeletonVisualizerRuntime.cs",
@@ -375,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 15,
               "Title": "fallInterface.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\fallInterface.cs",
               "RelativeDocumentMoniker": "Assets\\fallInterface.cs",
@@ -387,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 16,
               "Title": "CocoExporter.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\CocoExporter.cs",
               "RelativeDocumentMoniker": "Assets\\CocoExporter.cs",
@@ -399,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "JointStrengthController.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\JointStrengthController.cs",
               "RelativeDocumentMoniker": "Assets\\JointStrengthController.cs",
@@ -411,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 18,
               "Title": "SkeletonVisualizer.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\SkeletonVisualizer.cs",
               "RelativeDocumentMoniker": "Assets\\SkeletonVisualizer.cs",
@@ -423,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 17,
               "Title": "RunAndExportController.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\RunAndExportController.cs",
               "RelativeDocumentMoniker": "Assets\\RunAndExportController.cs",
@@ -435,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 20,
               "Title": "FloatInputBinder.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FloatInputBinder.cs",
               "RelativeDocumentMoniker": "Assets\\FloatInputBinder.cs",
@@ -447,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "HipsResetOnRun.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\HipsResetOnRun.cs",
               "RelativeDocumentMoniker": "Assets\\HipsResetOnRun.cs",
@@ -459,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 19,
               "Title": "FreezeOnStateExit.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\FreezeOnStateExit.cs",
               "RelativeDocumentMoniker": "Assets\\FreezeOnStateExit.cs",
@@ -471,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "LegWeaknessTrigger.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\LegWeaknessTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\LegWeaknessTrigger.cs",
@@ -483,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "CollisionForceOnPart.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\CollisionForceOnPart.cs",
               "RelativeDocumentMoniker": "Assets\\CollisionForceOnPart.cs",
@@ -495,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "BetterSimpleSlip.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\BetterSimpleSlip.cs",
               "RelativeDocumentMoniker": "Assets\\BetterSimpleSlip.cs",
@@ -507,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "occor.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\occor.cs",
               "RelativeDocumentMoniker": "Assets\\occor.cs",
@@ -519,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "RagdollStand.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\RagdollStand.cs",
               "RelativeDocumentMoniker": "Assets\\RagdollStand.cs",
@@ -531,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 22,
               "Title": "MuscleController.cs",
               "DocumentMoniker": "D:\\unity\\\u8DCC\u5012\u52A8\u753B\u751F\u6210\\Assets\\MuscleController.cs",
               "RelativeDocumentMoniker": "Assets\\MuscleController.cs",

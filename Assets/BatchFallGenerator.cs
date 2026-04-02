@@ -30,6 +30,7 @@ public class BatchFallGenerator : MonoBehaviour
     public float captureDuration = 3f;
     Coroutine currentRoutine;
     bool running;
+    public bool useRandomCamera = true;
     public void StartBatch(int count, int fallType)
     {
         if (running) return;
@@ -48,7 +49,10 @@ public class BatchFallGenerator : MonoBehaviour
 
         for (int i = 0; i < batchCount; i++)
         {
-            RandomizeCamera();
+            if (useRandomCamera)
+            {
+                RandomizeCamera();
+            }
 
             string folder = CreateRunFolder(i + 1);
 
@@ -115,7 +119,7 @@ public class BatchFallGenerator : MonoBehaviour
         }
     }
 
-    void RandomizeCamera()
+    public void RandomizeCamera()
     {
         Vector3 center = hips.position + Vector3.up * 0.9f;
 
