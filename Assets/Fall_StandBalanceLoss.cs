@@ -24,7 +24,6 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
     public float slowTiltSpeed = 11f;
     public float fastFallSpeed = 70f;
 
-    float tiltAngle;
     float duration;
     float initialTilt;
     int balanceType;
@@ -34,6 +33,7 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
     Dictionary<Transform, Quaternion> lastRot = new Dictionary<Transform, Quaternion>();
 
     Quaternion hipStart, spineStart, leftThighStart, rightThighStart;
+    Vector3 recordedFallDir; // 记录最终跌倒方向，用于物理启用时施加冲量
 
     void Awake()
     {
@@ -66,15 +66,50 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
     void Randomize()
     {
         duration = Random.Range(0.6f, 1.0f);
-        initialTilt = Random.Range(-3f, 3f);
-        balanceType = Random.Range(0, 5);
+        initialTilt = Random.Range(-3f, 3f);      // 起始倾斜角度（正：前倾，负：后仰，用于前/后类型）
+        balanceType = Random.Range(0, 5);         // 0:前倾 1:后仰 2:左侧倾 3:右侧倾 4:前倾+随机侧偏
     }
 
     IEnumerator FallRoutine()
     {
         ragdollEnabled = false;
         float timer = 0;
-        float currentSpineAngle = 0f;
+
+        // ===== 根据 balanceType 确定倾斜轴和方向 =====
+        Vector3 axis;
+        float sign = 1f;
+        switch (balanceType)
+        {
+            case 0: // 前倾
+                axis = Vector3.right;
+                sign = 1f;
+                break;
+            case 1: // 后仰
+                axis = Vector3.right;
+                sign = -1f;
+                break;
+            case 2: // 左侧倾
+                axis = Vector3.forward;
+                sign = 1f;
+                break;
+            case 3: // 右侧倾
+                axis = Vector3.forward;
+                sign = -1f;
+                break;
+            case 4: // 前倾 + 随机侧偏（绕斜轴）
+                float randomSide = Random.Range(-0.5f, 0.5f);
+                axis = new Vector3(1f, 0f, randomSide).normalized;
+                sign = 1f;
+                break;
+            default:
+                axis = Vector3.right;
+                sign = 1f;
+                break;
+        }
+
+        // 当前倾斜角度（标量，正负表示方向）
+        float currentTiltAngle = initialTilt;
+        float targetMax = 60f; // 最大倾斜角度绝对值
 
         hipStart = hips.localRotation;
         spineStart = spine.localRotation;
@@ -86,29 +121,42 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
             timer += Time.deltaTime;
             float delta = Time.deltaTime;
 
-            // 髋部完全不动
+            // 髋部保持初始旋转（不倒）
             hips.localRotation = hipStart;
 
-            // ==============================================
-            // 先慢倾 → 临界点 → 快速倒下
-            // ==============================================
-            if (currentSpineAngle < criticalAngle)
-                currentSpineAngle += slowTiltSpeed * delta;
-            else
-                currentSpineAngle += fastFallSpeed * delta;
+            // 根据当前倾斜绝对值决定倾斜速度
+            float absAngle = Mathf.Abs(currentTiltAngle);
+            float tiltSpeed = absAngle < criticalAngle ? slowTiltSpeed : fastFallSpeed;
+            float deltaAngle = tiltSpeed * delta;
+            currentTiltAngle += sign * deltaAngle;
 
-            spine.localRotation = spineStart * Quaternion.Euler(currentSpineAngle, 0, 0);
+            // 限制最大角度
+            if (sign > 0 && currentTiltAngle > targetMax)
+                currentTiltAngle = targetMax;
+            else if (sign < 0 && currentTiltAngle < -targetMax)
+                currentTiltAngle = -targetMax;
 
-            // 腿轻微弯曲
-            float legBend = Mathf.InverseLerp(0, 60, currentSpineAngle) * 12f;
+            // 应用脊柱旋转
+            spine.localRotation = spineStart * Quaternion.AngleAxis(currentTiltAngle, axis);
+
+            // 腿的弯曲：基于前向倾斜分量（如果是纯侧倾，腿弯曲较小）
+            float forwardTilt = Vector3.Dot(axis, Vector3.right) * currentTiltAngle;
+            float legBend = Mathf.InverseLerp(0, 60, Mathf.Abs(forwardTilt)) * 12f;
             leftThigh.localRotation = leftThighStart * Quaternion.Euler(legBend, 0, 0);
             rightThigh.localRotation = rightThighStart * Quaternion.Euler(legBend, 0, 0);
 
-            if (currentSpineAngle >= 60f)
+            // 达到最大角度则提前结束
+            if (Mathf.Abs(currentTiltAngle) >= targetMax)
                 break;
 
             yield return null;
         }
+
+        // 记录跌倒方向（用于物理冲量）
+        if (Mathf.Abs(Vector3.Dot(axis, Vector3.right)) > 0.5f)
+            recordedFallDir = Vector3.Scale(spine.forward, new Vector3(1, 0, 1)).normalized; // 前/后
+        else
+            recordedFallDir = Vector3.Scale(spine.right, new Vector3(1, 0, 1)).normalized;   // 左/右
 
         Physics.SyncTransforms();
         yield return StartCoroutine(EnableRagdollSmooth());
@@ -121,7 +169,6 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
 
         Physics.SyncTransforms();
 
-        // 缓存目标 transform
         Dictionary<Rigidbody, Vector3> targetPos = new Dictionary<Rigidbody, Vector3>();
         Dictionary<Rigidbody, Quaternion> targetRot = new Dictionary<Rigidbody, Quaternion>();
 
@@ -131,17 +178,17 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
 
             targetPos[rb] = rb.transform.position;
             targetRot[rb] = rb.transform.rotation;
-
-            rb.isKinematic = true; // 保持 kinematic，先过渡
+            rb.isKinematic = true;
         }
 
-        int steps = 5; // 分帧平滑
+        int steps = 5;
         for (int i = 0; i < steps; i++)
         {
             float alpha = (i + 1f) / steps;
-
             foreach (var rb in ragdollBodies)
             {
+                if (!targetPos.ContainsKey(rb)) continue;
+
                 Vector3 pos = Vector3.Lerp(rb.position, targetPos[rb], alpha);
                 Quaternion rot = Quaternion.Slerp(rb.rotation, targetRot[rb], alpha);
 
@@ -159,17 +206,14 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
 
                 rb.maxAngularVelocity = 20f;
             }
-
             yield return new WaitForFixedUpdate();
         }
 
-        // 解除 kinematic
         foreach (var rb in ragdollBodies)
             rb.isKinematic = false;
 
-        // 施加初始倒下速度
-        Vector3 fallDir = Vector3.Scale(spine.forward, new Vector3(1, 0, 1)).normalized;
-        hipsRB.velocity += fallDir * Random.Range(0.7f, 1.2f);
+        // 根据记录的方向施加初始倒下速度
+        hipsRB.velocity += recordedFallDir * Random.Range(0.7f, 1.2f);
     }
 
     void ResetPose()
