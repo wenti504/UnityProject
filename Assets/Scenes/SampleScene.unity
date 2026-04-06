@@ -2442,6 +2442,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a17fec03e940b2489243e0d10a1ac59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &607835019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607834996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 553e7e84bb1ac5b4e95577433ffb1487, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generator: {fileID: 607835007}
+  runsPerType: 1000
+  groundY: 0
+  maxVelocity: 20
+  maxAngularVelocity: 50
+  explosionFramesThreshold: 5
 --- !u!1 &615402858
 GameObject:
   m_ObjectHideFlags: 0
@@ -8821,7 +8839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 998633282090019964, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 998633282090019964, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -8829,7 +8847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 998633282090019964, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1148248372884562775, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8888,12 +8906,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1569658882748953667, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
+      propertyPath: m_LowAngularXLimit.limit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569658882748953667, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.damper
       value: 0.0565
       objectReference: {fileID: 0}
     - target: {fileID: 1569658882748953667, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 21.5
+      value: 86
       objectReference: {fileID: 0}
     - target: {fileID: 1569658882748953667, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -8901,7 +8923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1569658882748953667, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 41
+      value: 164
       objectReference: {fileID: 0}
     - target: {fileID: 2167320795406955758, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: reachTarget
@@ -8917,7 +8939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2342770488117365247, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 250
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 2342770488117365247, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -8925,7 +8947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2342770488117365247, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 80
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 2419089076097023248, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.y
@@ -8937,7 +8959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419089076097023248, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2419089076097023248, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -8945,7 +8967,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2419089076097023248, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 4
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2693909388546612516, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_Name
@@ -8973,7 +8995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2955700312284148478, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 2955700312284148478, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -8981,7 +9003,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2955700312284148478, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3040905126335591920, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: pushAngle
@@ -8997,7 +9019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3551210837005505951, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3551210837005505951, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9005,7 +9027,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3551210837005505951, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4084850508761839217, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.y
@@ -9017,7 +9039,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4084850508761839217, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 250
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 4084850508761839217, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9025,7 +9047,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4084850508761839217, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 80
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 4209786171933662986, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: captureCamera
@@ -9049,7 +9071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4316100475325582934, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 150
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 4316100475325582934, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9057,7 +9079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4316100475325582934, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 75
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 4539135745245016856, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.x
@@ -9069,7 +9091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4539135745245016856, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4539135745245016856, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9077,7 +9099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4539135745245016856, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 4907507882958251070, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.x
@@ -9089,7 +9111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4907507882958251070, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 4907507882958251070, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9097,7 +9119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4907507882958251070, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 16.7
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 5411176081739092268, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: reachTarget
@@ -9113,7 +9135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6301140665538936756, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 6301140665538936756, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9121,7 +9143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6301140665538936756, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6818601817994454390, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.x
@@ -9133,7 +9155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6818601817994454390, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 6818601817994454390, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9141,7 +9163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6818601817994454390, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7401130851309484586, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.x
@@ -9157,7 +9179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7401130851309484586, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 150
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 7401130851309484586, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9165,7 +9187,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7401130851309484586, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 75
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 7680331231434494282, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.x
@@ -9177,7 +9199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7680331231434494282, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 7680331231434494282, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9185,7 +9207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7680331231434494282, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 20
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 8185352589570916091, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.y
@@ -9204,12 +9226,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8185352589570916091, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
+      propertyPath: m_LowAngularXLimit.limit
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185352589570916091, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.damper
       value: 0.0565
       objectReference: {fileID: 0}
     - target: {fileID: 8185352589570916091, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8185352589570916091, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9217,7 +9243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8185352589570916091, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 22.5
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8248132101611211169, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_TargetPosition.x
@@ -9229,7 +9255,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248132101611211169, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularXLimitSpring.spring
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8248132101611211169, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.damper
@@ -9237,7 +9263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8248132101611211169, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: m_AngularYZLimitSpring.spring
-      value: 16.7
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 8293478130294227422, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
       propertyPath: forwardMax
@@ -9266,7 +9292,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2693909388546612516, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 607835019}
   m_SourcePrefab: {fileID: 100100000, guid: af7e42e9bf2293540a568039dfa9a945, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

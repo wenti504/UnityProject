@@ -354,6 +354,7 @@
 -analyzer:"D:/unitycache/2022.3.54f1c1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/unitycache/2022.3.54f1c1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/BatchFallGenerator.cs"
+"Assets/BatchFallTester.cs"
 "Assets/BonePose.cs"
 "Assets/CocoExporter.cs"
 "Assets/fallInterface.cs"

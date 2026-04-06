@@ -1,0 +1,57 @@
+===== FINAL REPORT =====
+
+--- FallType 0 ---
+Total: 1000
+Success: 957
+Success Rate: 95.7%
+Errors:
+AngularExplosion: 43
+
+--- FallType 1 ---
+Total: 1000
+Success: 952
+Success Rate: 95.2%
+Errors:
+AngularExplosion: 48
+
+--- FallType 2 ---
+Total: 1000
+Success: 953
+Success Rate: 95.3%
+Errors:
+AngularExplosion: 47
+
+--- FallType 3 ---
+Total: 1000
+Success: 930
+Success Rate: 93%
+Errors:
+AngularExplosion: 70
+
+--- FallType 4 ---
+Total: 1000
+Success: 864
+Success Rate: 86.4%
+Errors:
+AngularExplosion: 136
+
+--- FallType 5 ---
+Total: 1000
+Success: 822
+Success Rate: 82.2%
+Errors:
+AngularExplosion: 178
+
+--- FallType 6 ---
+Total: 1000
+Success: 795
+Success Rate: 79.5%
+Errors:
+AngularExplosion: 205
+
+--- FallType 7 ---
+Total: 1000
+Success: 684
+Success Rate: 68.4%
+Errors:
+AngularExplosion: 316

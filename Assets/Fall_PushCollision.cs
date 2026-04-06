@@ -107,35 +107,76 @@ public class Fall_PushCollision : MonoBehaviour, IFallController
         if (ragdollEnabled) yield break;
         ragdollEnabled = true;
 
+        Physics.SyncTransforms();
+
+        Dictionary<Rigidbody, Vector3> targetPos = new();
+        Dictionary<Rigidbody, Quaternion> targetRot = new();
+
         foreach (var rb in ragdollBodies)
         {
-            Transform t = rb.transform;
-            if (!lastPos.ContainsKey(t)) continue;
+            if (rb == null) continue;
 
-            rb.position = t.position;
-            rb.rotation = t.rotation;
+            targetPos[rb] = rb.transform.position;
+            targetRot[rb] = rb.transform.rotation;
 
-            Vector3 vel = (t.position - lastPos[t]) / Time.fixedDeltaTime;
-            rb.velocity = vel;
-
-            Quaternion delta = t.rotation * Quaternion.Inverse(lastRot[t]);
-            delta.ToAngleAxis(out float angle, out Vector3 axis);
-
-            if (angle > 180f) angle -= 360f;
-            rb.angularVelocity = axis * angle * Mathf.Deg2Rad / Time.fixedDeltaTime;
+            rb.isKinematic = true;
         }
 
-        yield return new WaitForFixedUpdate();
+        int steps = 5;
+
+        for (int i = 0; i < steps; i++)
+        {
+            float alpha = (i + 1f) / steps;
+
+            foreach (var rb in ragdollBodies)
+            {
+                if (rb == null) continue;
+
+                Vector3 pos = Vector3.Lerp(rb.position, targetPos[rb], alpha);
+                Quaternion rot = Quaternion.Slerp(rb.rotation, targetRot[rb], alpha);
+
+                rb.position = pos;
+                rb.rotation = rot;
+
+                // ✅ 正确 velocity（关键）
+                Vector3 vel = (targetPos[rb] - rb.position) / (steps * Time.fixedDeltaTime);
+                vel = Vector3.ClampMagnitude(vel, 8f);
+
+                rb.velocity = Vector3.Lerp(rb.velocity, vel, alpha);
+
+                // ✅ 稳定角速度
+                Quaternion delta = rot * Quaternion.Inverse(rb.rotation);
+                delta.ToAngleAxis(out float angle, out Vector3 axis);
+
+                Vector3 angularVel = Vector3.zero;
+
+                if (axis != Vector3.zero && !float.IsNaN(axis.x))
+                {
+                    if (angle > 180f) angle -= 360f;
+                    angularVel = axis * angle * Mathf.Deg2Rad / Time.fixedDeltaTime;
+                }
+
+                angularVel = Vector3.ClampMagnitude(angularVel, 15f);
+                rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, angularVel, alpha);
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
 
         foreach (var rb in ragdollBodies)
-            rb.isKinematic = false;
+            if (rb != null)
+                rb.isKinematic = false;
 
         yield return new WaitForFixedUpdate();
 
-        Vector3 pushVelocity = dir * (pushForce / hipsRB.mass);
-        hipsRB.velocity += pushVelocity;
+        // ✅ 只保留一种驱动：Impulse（推荐）
+        Vector3 force = dir * Random.Range(40f, 80f);
 
-        hipsRB.AddTorque(Vector3.Cross(Vector3.up, dir) * pushForce * 0.2f, ForceMode.Impulse);
+        hipsRB.AddForce(force, ForceMode.Impulse);
+
+        // ❌ 删除这些（很重要）
+        // hipsRB.velocity += pushVelocity;
+        // AddTorque(...)
     }
 
     void ResetRagdoll()
