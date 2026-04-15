@@ -1,0 +1,47 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+UserSettings/
+MemoryCaptures/
+Recordings/
+
+# Visual Studio / Rider generated
+.vs/
+.idea/
+*.sln.iml
+*.csproj
+*.sln
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+
+# Unity auto-generated files
+Assets/AssetStoreTools*
+Assets/*.pidb
+Assets/*.suo
+Assets/*.user
+Assets/*.userprefs
+Assets/*.csproj
+Assets/*.unityproj
+Assets/*.sln
+Assets/*.tmp
+
+# Build outputs / reports
+Output/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keep Unity package definitions
+!Packages/
+!Packages/manifest.json
+!Packages/packages-lock.json
