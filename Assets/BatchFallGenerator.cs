@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.IO;
 using UnityEngine;
 
@@ -29,9 +30,14 @@ public class BatchFallGenerator : MonoBehaviour
     public int batchCount = 5;
     public float captureDuration = 3f;
     public bool useRandomCamera = true;
+    public string outputRootFolder = "Output";
+
+    public event Action OnBatchCompleted;
 
     Coroutine currentRoutine;
     bool running;
+    bool hasFixedSeed;
+    int baseSeed;
 
     public Rigidbody[] GetRagdollBodies() => hips.GetComponentsInChildren<Rigidbody>();
 
@@ -49,6 +55,8 @@ public class BatchFallGenerator : MonoBehaviour
 
         for (int i = 0; i < count; i++)
         {
+            ApplySeedForRun(i);
+
             if (useRandomCamera) RandomizeCamera();
             string folder = CreateRunFolder(selectedFall, i + 1);
 
@@ -65,11 +73,12 @@ public class BatchFallGenerator : MonoBehaviour
         }
 
         running = false;
+        OnBatchCompleted?.Invoke();
     }
 
     void PlayFall(int fallType)
     {
-        if (fallType == -1) fallType = Random.Range(0, 8);
+        if (fallType == -1) fallType = UnityEngine.Random.Range(0, 8);
 
         switch (fallType)
         {
@@ -87,9 +96,9 @@ public class BatchFallGenerator : MonoBehaviour
     public void RandomizeCamera()
     {
         Vector3 center = hips.position + Vector3.up * 0.9f;
-        float distance = Random.Range(2.5f, 4.5f);
-        float height = Random.Range(0.6f, 1.8f);
-        float angle = Random.Range(-120f, 120f);
+        float distance = UnityEngine.Random.Range(2.5f, 4.5f);
+        float height = UnityEngine.Random.Range(0.6f, 1.8f);
+        float angle = UnityEngine.Random.Range(-120f, 120f);
 
         Vector3 dir = Quaternion.Euler(0f, angle, 0f) * Vector3.forward;
         Vector3 camPos = center + dir * distance + Vector3.up * height;
@@ -101,12 +110,47 @@ public class BatchFallGenerator : MonoBehaviour
     string CreateRunFolder(int fallType, int index)
     {
         string exeFolder = Directory.GetParent(Application.dataPath).FullName;
-        string root = Path.Combine(exeFolder, "Output");
+        string root = outputRootFolder;
+
+        if (string.IsNullOrWhiteSpace(root))
+            root = "Output";
+
+        if (!Path.IsPathRooted(root))
+            root = Path.Combine(exeFolder, root);
+
         if (!Directory.Exists(root)) Directory.CreateDirectory(root);
 
         string folder = Path.Combine(root, $"Run_Fall{fallType}_{index:D4}");
         Directory.CreateDirectory(folder);
         return folder;
+    }
+
+    public void ConfigureSeed(int? seed)
+    {
+        hasFixedSeed = seed.HasValue;
+        baseSeed = seed ?? 0;
+    }
+
+    public void ConfigureOutputRoot(string outputRoot)
+    {
+        if (!string.IsNullOrWhiteSpace(outputRoot))
+            outputRootFolder = outputRoot;
+    }
+
+    public void ApplyManualCamera(Vector3 position, Vector3 eulerRotation)
+    {
+        if (captureCamera == null) return;
+
+        captureCamera.transform.position = position;
+        captureCamera.transform.rotation = Quaternion.Euler(eulerRotation);
+    }
+
+    void ApplySeedForRun(int runIndex)
+    {
+        if (!hasFixedSeed) return;
+
+        int runSeed = unchecked(baseSeed + runIndex * 9973);
+        UnityEngine.Random.InitState(runSeed);
     }
 
     public void StopBatch()

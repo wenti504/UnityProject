@@ -41,6 +41,10 @@ Output/
 .DS_Store
 Thumbs.db
 
+# Python cache
+__pycache__/
+*.py[cod]
+
 # Keep Unity package definitions
 !Packages/
 !Packages/manifest.json
