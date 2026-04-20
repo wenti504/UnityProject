@@ -159,30 +159,85 @@ public class Fall_WalkingBalanceLoss : MonoBehaviour, IFallController
         if (ragdollEnabled) yield break;
         ragdollEnabled = true;
 
+        Physics.SyncTransforms();
+
+        // ✅ 关键修复：预先记录起始和目标
+        Dictionary<Rigidbody, Vector3> startPos = new();
+        Dictionary<Rigidbody, Quaternion> startRot = new();
+        Dictionary<Rigidbody, Vector3> targetPos = new();
+        Dictionary<Rigidbody, Quaternion> targetRot = new();
+
+        foreach (var rb in ragdollBodies)
+        {
+            if (rb == null) continue;
+
+            startPos[rb] = rb.position;
+            startRot[rb] = rb.rotation;
+            targetPos[rb] = rb.transform.position;  // SyncTransforms 后的最终行走姿态
+            targetRot[rb] = rb.transform.rotation;
+
+            rb.isKinematic = true;
+        }
+
         int steps = 5;
+        float totalTime = steps * Time.fixedDeltaTime;
+
+        Dictionary<Rigidbody, Vector3> constVel = new();
+        Dictionary<Rigidbody, Vector3> constAngVel = new();
+
+        foreach (var rb in ragdollBodies)
+        {
+            if (rb == null) continue;
+
+            Vector3 vel = (targetPos[rb] - startPos[rb]) / totalTime;
+            vel = Vector3.ClampMagnitude(vel, 10f);
+            constVel[rb] = vel;
+
+            Quaternion deltaRot = targetRot[rb] * Quaternion.Inverse(startRot[rb]);
+            deltaRot.ToAngleAxis(out float angle, out Vector3 axis);
+            if (axis != Vector3.zero && !float.IsNaN(axis.x))
+            {
+                if (angle > 180f) angle -= 360f;
+                Vector3 angVel = axis * (angle * Mathf.Deg2Rad) / totalTime;
+                angVel = Vector3.ClampMagnitude(angVel, 20f);
+                constAngVel[rb] = angVel;
+            }
+            else
+            {
+                constAngVel[rb] = Vector3.zero;
+            }
+        }
+
         for (int i = 0; i < steps; i++)
         {
             float alpha = (i + 1f) / steps;
+
             foreach (var rb in ragdollBodies)
             {
-                if (!lastPos.ContainsKey(rb.transform)) continue;
+                if (rb == null) continue;
 
-                rb.isKinematic = true; // 先保持 kinematic
-                rb.position = Vector3.Lerp(rb.position, rb.transform.position, alpha);
-                rb.rotation = Quaternion.Slerp(rb.rotation, rb.transform.rotation, alpha);
-                rb.velocity = Vector3.Lerp(rb.velocity, (rb.transform.position - lastPos[rb.transform]) / Time.fixedDeltaTime, alpha);
+                // ✅ 关键修复：从 start→target 插值，而不是 rb.position→rb.transform.position
+                Vector3 pos = Vector3.Lerp(startPos[rb], targetPos[rb], alpha);
+                Quaternion rot = Quaternion.Slerp(startRot[rb], targetRot[rb], alpha);
 
-                Quaternion delta = rb.transform.rotation * Quaternion.Inverse(lastRot[rb.transform]);
-                delta.ToAngleAxis(out float angle, out Vector3 axis);
-                if (angle > 180f) angle -= 360f;
-                Vector3 angVel = axis * angle * Mathf.Deg2Rad / Time.fixedDeltaTime;
-                rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, angVel, alpha);
+                rb.position = pos;
+                rb.rotation = rot;
+
+                rb.velocity = constVel[rb];
+                rb.angularVelocity = constAngVel[rb];
             }
+
             yield return new WaitForFixedUpdate();
         }
 
         foreach (var rb in ragdollBodies)
-            rb.isKinematic = false;
+            if (rb != null)
+                rb.isKinematic = false;
+
+        // ✅ 添加初始动量，与行走方向一致
+        Vector3 fallDir = Quaternion.Euler(0, fallYaw, 0) * transform.forward;
+        fallDir = Vector3.Scale(fallDir, new Vector3(1, 0, 1)).normalized;
+        hipsRB.velocity += fallDir * Random.Range(0.5f, 1.0f);
     }
 
     void ApplyWalkPose(float sin)

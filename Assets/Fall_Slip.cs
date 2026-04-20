@@ -164,6 +164,9 @@ public class Fall_Slip : MonoBehaviour, IFallController
 
         Physics.SyncTransforms();
 
+        // 记录每根骨骼的：起始位置/旋转、目标位置/旋转
+        Dictionary<Rigidbody, Vector3> startPos = new();
+        Dictionary<Rigidbody, Quaternion> startRot = new();
         Dictionary<Rigidbody, Vector3> targetPos = new();
         Dictionary<Rigidbody, Quaternion> targetRot = new();
 
@@ -171,13 +174,45 @@ public class Fall_Slip : MonoBehaviour, IFallController
         {
             if (rb == null) continue;
 
-            targetPos[rb] = rb.transform.position;
+            startPos[rb] = rb.position;
+            startRot[rb] = rb.rotation;
+            targetPos[rb] = rb.transform.position;   // Physics.SyncTransforms 后的最终姿态
             targetRot[rb] = rb.transform.rotation;
 
             rb.isKinematic = true;
         }
 
         int steps = 5;
+        float totalTime = steps * Time.fixedDeltaTime;
+
+        // 预计算每根骨骼的恒定线速度和角速度
+        Dictionary<Rigidbody, Vector3> constVel = new();
+        Dictionary<Rigidbody, Vector3> constAngVel = new();
+
+        foreach (var rb in ragdollBodies)
+        {
+            if (rb == null) continue;
+
+            // 线速度 = 总位移 / 总时间
+            Vector3 vel = (targetPos[rb] - startPos[rb]) / totalTime;
+            vel = Vector3.ClampMagnitude(vel, 10f);
+            constVel[rb] = vel;
+
+            // 角速度 = 总旋转角度 / 总时间
+            Quaternion deltaRot = targetRot[rb] * Quaternion.Inverse(startRot[rb]);
+            deltaRot.ToAngleAxis(out float angle, out Vector3 axis);
+            if (axis != Vector3.zero && !float.IsNaN(axis.x))
+            {
+                if (angle > 180f) angle -= 360f;
+                Vector3 angVel = axis * (angle * Mathf.Deg2Rad) / totalTime;
+                angVel = Vector3.ClampMagnitude(angVel, 20f);
+                constAngVel[rb] = angVel;
+            }
+            else
+            {
+                constAngVel[rb] = Vector3.zero;
+            }
+        }
 
         for (int i = 0; i < steps; i++)
         {
@@ -187,33 +222,16 @@ public class Fall_Slip : MonoBehaviour, IFallController
             {
                 if (rb == null) continue;
 
-                Vector3 pos = Vector3.Lerp(rb.position, targetPos[rb], alpha);
-                Quaternion rot = Quaternion.Slerp(rb.rotation, targetRot[rb], alpha);
+                // 插值位置
+                Vector3 pos = Vector3.Lerp(startPos[rb], targetPos[rb], alpha);
+                Quaternion rot = Quaternion.Slerp(startRot[rb], targetRot[rb], alpha);
 
                 rb.position = pos;
                 rb.rotation = rot;
 
-                // ✅ 正确 velocity（关键修复）
-                Vector3 vel = (targetPos[rb] - rb.position) / (steps * Time.fixedDeltaTime);
-                vel = Vector3.ClampMagnitude(vel, 10f);
-
-                rb.velocity = Vector3.Lerp(rb.velocity, vel, alpha);
-
-                // ✅ 稳定角速度
-                Quaternion delta = rot * Quaternion.Inverse(rb.rotation);
-                delta.ToAngleAxis(out float angle, out Vector3 axis);
-
-                Vector3 angularVel = Vector3.zero;
-
-                if (axis != Vector3.zero && !float.IsNaN(axis.x))
-                {
-                    if (angle > 180f) angle -= 360f;
-                    angularVel = axis * angle * Mathf.Deg2Rad / Time.fixedDeltaTime;
-                }
-
-                angularVel = Vector3.ClampMagnitude(angularVel, 20f);
-                rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, angularVel, alpha);
-
+                // ✅ 直接写恒定速度，不用 Lerp，不做增量推导
+                rb.velocity = constVel[rb];
+                rb.angularVelocity = constAngVel[rb];
                 rb.maxAngularVelocity = 20f;
             }
 
@@ -224,8 +242,8 @@ public class Fall_Slip : MonoBehaviour, IFallController
             if (rb != null)
                 rb.isKinematic = false;
 
-        // ✅ 降低冲量（关键修复）
-        Vector3 force = slipDir * Random.Range(30, 60) + Vector3.down * 20;
+        // ✅ 冲量从 30-60 降到 15-35，减少启动冲击
+        Vector3 force = slipDir * Random.Range(15f, 35f) + Vector3.down * 15f;
         GetForceTarget().AddForce(force, ForceMode.Impulse);
     }
 

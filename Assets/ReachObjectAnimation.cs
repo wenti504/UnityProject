@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ReachObjectAnimation : MonoBehaviour, IFallController
@@ -21,6 +22,10 @@ public class ReachObjectAnimation : MonoBehaviour, IFallController
     bool physicsEnabled;
 
     Rigidbody[] bodies;
+
+    // 用于平滑过渡的位置/旋转缓存
+    Dictionary<Transform, Vector3> lastPos = new Dictionary<Transform, Vector3>();
+    Dictionary<Transform, Quaternion> lastRot = new Dictionary<Transform, Quaternion>();
 
     class Snapshot
     {
@@ -53,6 +58,16 @@ public class ReachObjectAnimation : MonoBehaviour, IFallController
         SetPhysics(false);
     }
 
+    void FixedUpdate()
+    {
+        // 记录每帧物理状态，用于平滑过渡
+        foreach (var rb in bodies)
+        {
+            lastPos[rb.transform] = rb.transform.position;
+            lastRot[rb.transform] = rb.transform.rotation;
+        }
+    }
+
     void Update()
     {
         if (!playing) return;
@@ -63,11 +78,12 @@ public class ReachObjectAnimation : MonoBehaviour, IFallController
 
         ApplyPose(s);
 
+        // ✅ 动画完成后启用5帧平滑物理过渡
         if (t >= 1f && !physicsEnabled)
         {
             physicsEnabled = true;
-            SetPhysics(true);
             playing = false;
+            StartCoroutine(EnableRagdollSmooth());
         }
     }
 
@@ -76,14 +92,14 @@ public class ReachObjectAnimation : MonoBehaviour, IFallController
         ResetPose();
         GenerateRandom();
 
-        CalculateTargetPose(); // ✅ 不再传 target
+        CalculateTargetPose();
 
         timer = 0f;
         playing = true;
         physicsEnabled = false;
     }
 
-    // ✅ 在内部生成“虚拟 target”
+    // ✅ 在内部生成"虚拟 target"
     Vector3 GenerateRandomTarget()
     {
         Vector3 hipsPos = hips.position;
@@ -215,6 +231,70 @@ public class ReachObjectAnimation : MonoBehaviour, IFallController
 
         upperArm.localRotation =
             Quaternion.Slerp(armStartRot, armTargetRot, t);
+    }
+
+    // ✅ 新增：5帧平滑物理过渡
+    IEnumerator EnableRagdollSmooth()
+    {
+        Physics.SyncTransforms();
+
+        Dictionary<Rigidbody, Vector3> targetPos = new Dictionary<Rigidbody, Vector3>();
+        Dictionary<Rigidbody, Quaternion> targetRot = new Dictionary<Rigidbody, Quaternion>();
+
+        foreach (var rb in bodies)
+        {
+            if (rb == null) continue;
+
+            targetPos[rb] = rb.transform.position;
+            targetRot[rb] = rb.transform.rotation;
+            rb.isKinematic = true;
+        }
+
+        int steps = 5;
+        for (int i = 0; i < steps; i++)
+        {
+            float alpha = (i + 1f) / steps;
+
+            foreach (var rb in bodies)
+            {
+                if (rb == null) continue;
+
+                Vector3 pos = Vector3.Lerp(rb.position, targetPos[rb], alpha);
+                Quaternion rot = Quaternion.Slerp(rb.rotation, targetRot[rb], alpha);
+
+                rb.position = pos;
+                rb.rotation = rot;
+
+                // 平滑线速度
+                Vector3 vel = (targetPos[rb] - rb.position) / (steps * Time.fixedDeltaTime);
+                vel = Vector3.ClampMagnitude(vel, 10f);
+                rb.velocity = Vector3.Lerp(rb.velocity, vel, alpha);
+
+                // 平滑角速度
+                Quaternion delta = rot * Quaternion.Inverse(rb.rotation);
+                delta.ToAngleAxis(out float angle, out Vector3 axis);
+
+                Vector3 angularVel = Vector3.zero;
+                if (axis != Vector3.zero && !float.IsNaN(axis.x))
+                {
+                    if (angle > 180f) angle -= 360f;
+                    angularVel = axis * angle * Mathf.Deg2Rad / Time.fixedDeltaTime;
+                }
+                angularVel = Vector3.ClampMagnitude(angularVel, 20f);
+                rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, angularVel, alpha);
+
+                rb.maxAngularVelocity = 20f;
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        // 解除运动学约束，完全交给物理
+        foreach (var rb in bodies)
+        {
+            if (rb == null) continue;
+            rb.isKinematic = false;
+        }
     }
 
     void CachePose()

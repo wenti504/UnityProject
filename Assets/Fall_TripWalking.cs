@@ -171,9 +171,9 @@ public class Fall_TripWalking : MonoBehaviour, IFallController
             yield return null;
         }
 
-        // 物理接管
+        // 物理接管 —— 使用5帧平滑过渡
         Physics.SyncTransforms();
-        yield return StartCoroutine(EnableRagdoll());
+        yield return StartCoroutine(EnableRagdollSmooth());
     }
 
     void ApplyWalk(float phase)
@@ -206,30 +206,72 @@ public class Fall_TripWalking : MonoBehaviour, IFallController
         );
     }
 
-    IEnumerator EnableRagdoll()
+    // ✅ 替换原来的 EnableRagdoll() 为 EnableRagdollSmooth()
+    IEnumerator EnableRagdollSmooth()
     {
         if (ragdollEnabled) yield break;
         ragdollEnabled = true;
 
+        Physics.SyncTransforms();
+
+        Dictionary<Rigidbody, Vector3> targetPos = new Dictionary<Rigidbody, Vector3>();
+        Dictionary<Rigidbody, Quaternion> targetRot = new Dictionary<Rigidbody, Quaternion>();
+
         foreach (var rb in ragdollBodies)
         {
-            if (!lastPos.ContainsKey(rb.transform)) continue;
+            if (rb == null) continue;
 
-            rb.position = rb.transform.position;
-            rb.rotation = rb.transform.rotation;
-
-            Vector3 vel = (rb.transform.position - lastPos[rb.transform]) / Time.fixedDeltaTime;
-            rb.velocity = vel * randomPhysicsPower; // 随机力度
-            rb.angularVelocity = Vector3.zero;
-
-            rb.drag = 2.5f;
-            rb.angularDrag = 10f;
+            targetPos[rb] = rb.transform.position;
+            targetRot[rb] = rb.transform.rotation;
+            rb.isKinematic = true;
         }
 
-        yield return new WaitForFixedUpdate();
+        int steps = 5;
+        for (int i = 0; i < steps; i++)
+        {
+            float alpha = (i + 1f) / steps;
+
+            foreach (var rb in ragdollBodies)
+            {
+                if (rb == null) continue;
+
+                Vector3 pos = Vector3.Lerp(rb.position, targetPos[rb], alpha);
+                Quaternion rot = Quaternion.Slerp(rb.rotation, targetRot[rb], alpha);
+
+                rb.position = pos;
+                rb.rotation = rot;
+
+                // 平滑线速度（融入 randomPhysicsPower）
+                Vector3 vel = (targetPos[rb] - rb.position) / (steps * Time.fixedDeltaTime);
+                vel = Vector3.ClampMagnitude(vel, 10f);
+                rb.velocity = Vector3.Lerp(rb.velocity, vel, alpha) * randomPhysicsPower;
+
+                // 平滑角速度
+                Quaternion delta = rot * Quaternion.Inverse(rb.rotation);
+                delta.ToAngleAxis(out float angle, out Vector3 axis);
+
+                Vector3 angularVel = Vector3.zero;
+                if (axis != Vector3.zero && !float.IsNaN(axis.x))
+                {
+                    if (angle > 180f) angle -= 360f;
+                    angularVel = axis * angle * Mathf.Deg2Rad / Time.fixedDeltaTime;
+                }
+                angularVel = Vector3.ClampMagnitude(angularVel, 20f);
+                rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, angularVel, alpha);
+
+                rb.drag = 2.5f;
+                rb.angularDrag = 10f;
+                rb.maxAngularVelocity = 20f;
+            }
+
+            yield return new WaitForFixedUpdate();
+        }
 
         foreach (var rb in ragdollBodies)
+        {
+            if (rb == null) continue;
             rb.isKinematic = false;
+        }
     }
 
     void CachePose()

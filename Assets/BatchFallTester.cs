@@ -15,8 +15,8 @@ public class BatchFallTester : MonoBehaviour
     public int runsPerType = 100;
 
     public float groundY = 0f;
-    public float maxVelocity = 20f;
-    public float maxAngularVelocity = 50f;
+    public float maxVelocity = 8f;
+    public float maxAngularVelocity = 30f;
     public int explosionFramesThreshold = 5;
 
     int fallTypeCount = 8;

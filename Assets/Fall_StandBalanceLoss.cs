@@ -169,51 +169,82 @@ public class Fall_StandBalanceLoss : MonoBehaviour, IFallController
 
         Physics.SyncTransforms();
 
-        Dictionary<Rigidbody, Vector3> targetPos = new Dictionary<Rigidbody, Vector3>();
-        Dictionary<Rigidbody, Quaternion> targetRot = new Dictionary<Rigidbody, Quaternion>();
+        Dictionary<Rigidbody, Vector3> startPos = new();
+        Dictionary<Rigidbody, Quaternion> startRot = new();
+        Dictionary<Rigidbody, Vector3> targetPos = new();
+        Dictionary<Rigidbody, Quaternion> targetRot = new();
 
         foreach (var rb in ragdollBodies)
         {
-            if (!lastPos.ContainsKey(rb.transform)) continue;
+            if (rb == null) continue;
 
+            startPos[rb] = rb.position;
+            startRot[rb] = rb.rotation;
             targetPos[rb] = rb.transform.position;
             targetRot[rb] = rb.transform.rotation;
+
             rb.isKinematic = true;
         }
 
         int steps = 5;
+        float totalTime = steps * Time.fixedDeltaTime;
+
+        Dictionary<Rigidbody, Vector3> constVel = new();
+        Dictionary<Rigidbody, Vector3> constAngVel = new();
+
+        foreach (var rb in ragdollBodies)
+        {
+            if (rb == null) continue;
+
+            Vector3 vel = (targetPos[rb] - startPos[rb]) / totalTime;
+            vel = Vector3.ClampMagnitude(vel, 8f);  // 这个姿势更温和，上限可以更低
+            constVel[rb] = vel;
+
+            Quaternion deltaRot = targetRot[rb] * Quaternion.Inverse(startRot[rb]);
+            deltaRot.ToAngleAxis(out float angle, out Vector3 axis);
+            if (axis != Vector3.zero && !float.IsNaN(axis.x))
+            {
+                if (angle > 180f) angle -= 360f;
+                Vector3 angVel = axis * (angle * Mathf.Deg2Rad) / totalTime;
+                angVel = Vector3.ClampMagnitude(angVel, 15f);
+                constAngVel[rb] = angVel;
+            }
+            else
+            {
+                constAngVel[rb] = Vector3.zero;
+            }
+        }
+
         for (int i = 0; i < steps; i++)
         {
             float alpha = (i + 1f) / steps;
+
             foreach (var rb in ragdollBodies)
             {
-                if (!targetPos.ContainsKey(rb)) continue;
+                if (rb == null) continue;
 
-                Vector3 pos = Vector3.Lerp(rb.position, targetPos[rb], alpha);
-                Quaternion rot = Quaternion.Slerp(rb.rotation, targetRot[rb], alpha);
+                Vector3 pos = Vector3.Lerp(startPos[rb], targetPos[rb], alpha);
+                Quaternion rot = Quaternion.Slerp(startRot[rb], targetRot[rb], alpha);
 
                 rb.position = pos;
                 rb.rotation = rot;
 
-                Vector3 vel = (pos - lastPos[rb.transform]) / Time.fixedDeltaTime;
-                rb.velocity = Vector3.Lerp(rb.velocity, vel, alpha);
-
-                Quaternion delta = rot * Quaternion.Inverse(lastRot[rb.transform]);
-                delta.ToAngleAxis(out float angle, out Vector3 axis);
-                if (angle > 180f) angle -= 360f;
-                Vector3 angularVel = axis * angle * Mathf.Deg2Rad / Time.fixedDeltaTime;
-                rb.angularVelocity = Vector3.Lerp(rb.angularVelocity, angularVel, alpha);
-
-                rb.maxAngularVelocity = 20f;
+                rb.velocity = constVel[rb];
+                rb.angularVelocity = constAngVel[rb];
+                rb.maxAngularVelocity = 15f;
             }
+
             yield return new WaitForFixedUpdate();
         }
 
         foreach (var rb in ragdollBodies)
-            rb.isKinematic = false;
+            if (rb != null)
+                rb.isKinematic = false;
 
-        // 根据记录的方向施加初始倒下速度
-        hipsRB.velocity += recordedFallDir * Random.Range(0.7f, 1.2f);
+        // ✅ 更温和的初始推动，方向更精确
+        Vector3 pushDir = recordedFallDir.normalized;
+        hipsRB.velocity += pushDir * Random.Range(0.3f, 0.8f);
+        hipsRB.velocity += Vector3.down * 0.2f; // 轻微向下，帮助触发碰撞
     }
 
     void ResetPose()
